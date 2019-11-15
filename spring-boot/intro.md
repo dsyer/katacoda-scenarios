@@ -1,1 +1,1 @@
-Spring Boot is fun. This scenario tries to keep it fun.
+Spring Boot is a great way to write an application in Java. This scenario show you how to create a Spring Boot application and run it in Kubernetes.
