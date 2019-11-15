@@ -1,0 +1,1 @@
+Spring Boot is fun. This scenario tries to keep it fun.
