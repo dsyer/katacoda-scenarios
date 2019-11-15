@@ -7,17 +7,28 @@
     "steps": [
       {
         "title": "Create a Spring Boot Application",
+        "code": "step1-env.sh",
         "text": "step1.md"
+      },
+      {
+        "title": "Containerize the Application",
+        "code": "step2-env.sh",
+        "text": "step2.md"
+      },
+      {
+        "title": "Deploy to Kubernetes",
+        "code": "step3-env.sh",
+        "text": "step3.md"
       }
     ],
     "intro": {
-      "text": "intro.md",
-      "code": "env.sh"
+      "text": "intro.md"
     },
     "finish": {
       "text": "finish.md"
     }
   },
+  "dashboards": [{ "name": "App", "port": 8080 }],
   "environment": {
     "uilayout": "terminal"
   },
