@@ -1,0 +1,58 @@
+{
+  "title": "Playground",
+  "description": "Some stuff to do",
+  "difficulty": "Beginner",
+  "time": "10",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1",
+        "code": "step1-env.sh",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2",
+        "code": "step2-env.sh",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "setup.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "kind.sh",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "kubectl.sh",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "kustomize.sh",
+          "target": "/root",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "dashboards": [
+    {
+      "name": "App",
+      "port": 8080
+    }
+  ],
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
