@@ -1,28 +1,38 @@
-Before you can start, you need to wait for the Kubernetes cluster to be ready (a command prompt will appear once it's ready).
+Before you can start, you need to install and start the Kubernetes cluster.
 
-`kubectl create deployment demo --image=myorg/demo --dry-run -o=yaml > deployment.yam && echo --- > deployment.yaml
-&& kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`{{execute}}
+## Install Kubectl
 
-`kubectl apply -f deployment.yaml`{{execute}}
+[Kubectl](https://github.com/kubernetes/kubectl) is the command line for Kubernetes. You can install it from Google storage:
+
+`kubectl_version="${1:-v1.15.3}" base_url="${2:-https://storage.googleapis.com/kubernetes-release/release}" \
+curl -Lo kubectl ${base_url}/${kubectl_version}/bin/linux/amd64/kubectl \
+&& chmod +x kubectl \
+&& sudo mv kubectl /usr/local/bin/
+`{{execute}}
+
+# Download Kind
+
+[Kind](https://github.com/kubernetes-sigs/kind) is a tool for running Kubernetes in docker. It works well for integration testing, or for simple development-time use cases, where resourecs are constrained. You can install it from github:
+
+`
+kind_version="${1:-v0.5.1}" base_url="${2:-https://github.com/kubernetes-sigs/kind/releases/download}" \
+curl -Lo kind ${base_url}/${kind_version}/kind-linux-amd64 \
+&& chmod +x kind
+&& mv kind /usr/local/bin/`{{execute}}
+
+and run it to create a cluster:
+
+`kind create cluster`{{execute}}
+
+Then set up the credentials to connect to it:
+
+`mkdir -p ~/.kube && kind get kubeconfig > ~/.kind/config`{{execute}}
+
+Check that it works:
 
 `kubectl get all`{{execute}}
 
 ```
-NAME                             READY     STATUS      RESTARTS   AGE
-pod/demo-658b7f4997-qfw9l        1/1       Running     0          146m
-
 NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 service/kubernetes   ClusterIP   10.43.0.1       <none>        443/TCP    2d18h
-service/demo         ClusterIP   10.43.138.213   <none>        8080/TCP   21h
-
-NAME                   READY     UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/demo   1/1       1            1           21h
-
-NAME                              DESIRED   CURRENT   READY     AGE
-replicaset.apps/demo-658b7f4997   1         1         1         21h
-d
 ```
-
-`kubectl port-forward svc/demo 8080:8080`{{execute T1}}
-
-`curl localhost:8080/actuator/health`{{execute T2}}

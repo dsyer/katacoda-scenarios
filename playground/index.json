@@ -27,17 +27,17 @@
       "host01": [
         {
           "file": "kind.sh",
-          "target": "/root",
+          "target": "/root/tools",
           "chmod": "+x"
         },
         {
           "file": "kubectl.sh",
-          "target": "/root",
+          "target": "/root/tools",
           "chmod": "+x"
         },
         {
           "file": "kustomize.sh",
-          "target": "/root",
+          "target": "/root/tools",
           "chmod": "+x"
         }
       ]

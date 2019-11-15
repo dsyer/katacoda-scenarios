@@ -7,22 +7,24 @@
     "steps": [
       {
         "title": "Create a Spring Boot Application",
-        "code": "step1-env.sh",
         "text": "step1.md"
       },
       {
         "title": "Containerize the Application",
-        "code": "step2-env.sh",
         "text": "step2.md"
       },
       {
-        "title": "Deploy to Kubernetes",
-        "code": "step3-env.sh",
+        "title": "Install and Run Kubernetes",
         "text": "step3.md"
+      },
+      {
+        "title": "Deploy the Application to Kubernetes",
+        "text": "step4.md"
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "setup.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -33,6 +35,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes"
+    "imageid": "ubuntu"
   }
 }
