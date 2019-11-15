@@ -3,7 +3,9 @@ The first thing we will do is create a Spring Boot application. If you have one 
 
 `curl https://start.spring.io/starter.tgz -d dependencies=webflux,actuator | tar -xzvf -`{{execute}}
 
-You can then build the application:
+You can then build the application: 
+
+> NOTE: It will take a couple of minutes the first time, but then once the dependencies are all cached it will be fast.
 
 `./mvnw install`{{execute}}
 

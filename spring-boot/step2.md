@@ -3,15 +3,15 @@ cat > Dockerfile << EOF
 FROM openjdk:8-jdk-alpine AS builder
 WORKDIR target/dependency
 ARG appjar=target/*.jar
-COPY ${appjar} app.jar
+COPY \${appjar} app.jar
 RUN jar -xf ./app.jar
 
 FROM openjdk:8-jre-alpine
 VOLUME /tmp
 ARG DEPENDENCY=target/dependency
-COPY --from=builder ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY --from=builder ${DEPENDENCY}/META-INF /app/META-INF
-COPY --from=builder ${DEPENDENCY}/BOOT-INF/classes /app
+COPY --from=builder \${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=builder \${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=builder \${DEPENDENCY}/BOOT-INF/classes /app
 ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
 EOF
 ```{{execute}}
