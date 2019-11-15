@@ -1,12 +1,13 @@
 
-Now you are ready to deploy the application. You have a container that runs and exposes port 8080, so all you need to make Kbernetes work is some YAML. To avoid having to look at or edit YAML, for now, you can ask `kubectl` to generate it:
+Now you are ready to deploy the application. You have a container that runs and exposes port 8080, so all you need to make Kbernetes work is some YAML. To avoid having to look at or edit YAML, for now, you can ask `kubectl` to generate it. The only thing that might vary here is the `--image` name. If you deployed your container to your own repository, use its tag instead of this one:
 
-```
-kubectl create deployment demo --image=myorg/demo --dry-run -o=yaml > deployment.yam \
-&& echo --- > deployment.yaml \
-&& kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
-```
-{{execute}}
+`
+kubectl create deployment demo --image=dsyer/demo --dry-run -o=yaml > deployment.yaml`{{execute}}
+
+`echo --- >> deployment.yaml`{{execute}}
+
+`kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+`{{execute}}
 
 You can take the YAML generated above and edit it if you like, or you can just apply it:
 

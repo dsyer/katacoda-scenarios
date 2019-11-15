@@ -58,3 +58,7 @@ So you can curl the endpoints:
   }
 }
 ```
+
+Finally:
+
+`echo "Send Ctrl+C to kill the container"`{{execute T1 interrupt}}

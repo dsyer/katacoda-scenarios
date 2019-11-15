@@ -19,11 +19,17 @@ EOF
 
 `docker build -t dsyer/demo .`{{execute}}
 
+You can run the container locally:
+
 `docker run -p 8080:8080 dsyer/demo`{{execute T1}}
+
+and check that it works:
 
 `curl localhost:8080/actuator/health`{{execute T2}}
 
-You won't be able to run this one unless you authenticate with Dockerhub (`docker login`), but there's an image there already that should work:
+`echo "Send Ctrl+C to kill the container"`{{execute T1 interrupt}}
+
+You won't be able to push the image unless you authenticate with Dockerhub (`docker login`), but there's an image there already that should work. If you were authenticated you could:
 
 `docker push dsyer/demo`
 
