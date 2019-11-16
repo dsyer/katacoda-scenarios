@@ -1,4 +1,4 @@
-Spring Boot is a great way to write an application in Java. This scenario show you how to create a Spring Boot application and run it in Kubernetes with as little fuss and bother as possible. And there's no YAML. To do this we need to do three things:
+Spring Boot is a great way to write an application in Java. This scenario shows you how to create a Spring Boot application and run it in Kubernetes with as little fuss and bother as possible. And there's no YAML. To do this we need to do three things:
 
 1. Create a Spring Boot application
 2. Containerize it, and push the container to a registry
