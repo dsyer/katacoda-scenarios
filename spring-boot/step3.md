@@ -19,7 +19,7 @@ curl -Lo kubectl ${base_url}/${kubectl_version}/bin/linux/amd64/kubectl \
 kind_version="v0.5.1" && \
 base_url="https://github.com/kubernetes-sigs/kind/releases/download" && \
 curl -Lo kind ${base_url}/${kind_version}/kind-linux-amd64 \
-&& chmod +x kind
+&& chmod +x kind \
 && mv kind /usr/local/bin/`{{execute}}
 
 and run it to create a (single node) Kubernetes cluster:

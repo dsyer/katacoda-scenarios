@@ -1,9 +1,11 @@
-```
+Create a `Dockerfile` by running this command:
+
+<pre><code class="execute">
 cat > Dockerfile << EOF
 FROM openjdk:8-jdk-alpine AS builder
 WORKDIR target/dependency
-ARG appjar=target/*.jar
-COPY \${appjar} app.jar
+ARG APPJAR=target/*.jar
+COPY \${APPJAR} app.jar
 RUN jar -xf ./app.jar
 
 FROM openjdk:8-jre-alpine
@@ -14,8 +16,9 @@ COPY --from=builder \${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=builder \${DEPENDENCY}/BOOT-INF/classes /app
 ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
 EOF
-```
-{{execute}}
+</code></pre>
+
+Then build the container image, giving it a tag (choose your own ID instead of "dsyer" if you are going to push to Dockerhub):
 
 `docker build -t dsyer/demo .`{{execute}}
 
@@ -26,6 +29,8 @@ You can run the container locally:
 and check that it works:
 
 `curl localhost:8080/actuator/health`{{execute T2}}
+
+Finish off by killing the container:
 
 `echo "Send Ctrl+C to kill the container"`{{execute T1 interrupt}}
 

@@ -5,9 +5,9 @@ The first thing we will do is create a Spring Boot application. If you have one 
 
 You can then build the application: 
 
-> NOTE: It will take a couple of minutes the first time, but then once the dependencies are all cached it will be fast.
-
 `./mvnw install`{{execute}}
+
+> NOTE: It will take a couple of minutes the first time, but then once the dependencies are all cached it will be fast.
 
 and see the result (an executable JAR file):
 
@@ -61,4 +61,4 @@ So you can curl the endpoints:
 
 Finally:
 
-`echo "Send Ctrl+C to kill the container"`{{execute T1 interrupt}}
+`echo "Send Ctrl+C to kill the application"`{{execute T1 interrupt}}

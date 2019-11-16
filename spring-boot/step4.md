@@ -13,6 +13,11 @@ You can take the YAML generated above and edit it if you like, or you can just a
 
 `kubectl apply -f deployment.yaml`{{execute}}
 
+```
+deployment.apps/demo created
+service/demo created
+```
+
 and check that the application is running:
 
 `kubectl get all`{{execute}}

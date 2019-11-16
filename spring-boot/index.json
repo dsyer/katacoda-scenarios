@@ -2,7 +2,7 @@
   "title": "Getting Started with Spring Boot on Kubernetes",
   "description": "Starting with just a command line and a Kubernetes cluster, you can see how to create, build and run a simple Spring Boot application.",
   "difficulty": "Beginner",
-  "time": "10",
+  "time": "20",
   "details": {
     "steps": [
       {
