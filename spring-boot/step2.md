@@ -38,6 +38,6 @@ You won't be able to push the image unless you authenticate with Dockerhub (`doc
 
 `docker push dsyer/demo`
 
-The image needs to be pushed to Dockerhub (or some other accessible repository) because Kubernetes pulls the image from inside its Kubelets (nodes), which are not in general connected to the local docker daemon.
+In real life the image needs to be pushed to Dockerhub (or some other accessible repository) because Kubernetes pulls the image from inside its Kubelets (nodes), which are not in general connected to the local docker daemon. For the purposes of this scenario you can omit the push and just use the image that is already there.
 
 > NOTE: Just for testing, there are workarounds that make `docker push` work with an insecure local registry, for instance, but that is out of scope for this scenario.

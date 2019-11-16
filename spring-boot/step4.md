@@ -1,5 +1,5 @@
 
-Now you are ready to deploy the application. You have a container that runs and exposes port 8080, so all you need to make Kbernetes work is some YAML. To avoid having to look at or edit YAML, for now, you can ask `kubectl` to generate it. The only thing that might vary here is the `--image` name. If you deployed your container to your own repository, use its tag instead of this one:
+You have a container that runs and exposes port 8080, so all you need to make Kubernetes run it is some YAML. To avoid having to look at or edit YAML, for now, you can ask `kubectl` to generate it for you. The only thing that might vary here is the `--image` name. If you deployed your container to your own repository, use its tag instead of this one:
 
 `
 kubectl create deployment demo --image=dsyer/demo --dry-run -o=yaml > deployment.yaml`{{execute}}
@@ -18,7 +18,7 @@ deployment.apps/demo created
 service/demo created
 ```
 
-and check that the application is running:
+Check that the application is running:
 
 `kubectl get all`{{execute}}
 
