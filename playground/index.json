@@ -43,14 +43,22 @@
       ]
     }
   },
-  "dashboards": [
-    {
-      "name": "App",
-      "port": 8080
-    }
+  "files": [
+    "app.js"
   ],
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "editor-terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "App",
+        "port": 8080
+      },
+      {
+        "name": "Node",
+        "port": 3000
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu"

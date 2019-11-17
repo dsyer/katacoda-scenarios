@@ -9,11 +9,9 @@ You can then build the application:
 
 > NOTE: It will take a couple of minutes the first time, but then once the dependencies are all cached it will be fast.
 
-and see the result (an executable JAR file):
+And you can see the result of the build. If the build was successful, you should see a JAR file, something like this:
 
 `ls -l target/*.jar`{{execute}}
-
-If the build was successful, you should see a JAR file, something like this:
 
 ```
 -rw-r--r-- 1 root root 19463334 Nov 15 11:54 target/demo-0.0.1-SNAPSHOT.jar
