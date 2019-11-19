@@ -30,9 +30,10 @@
       "text": "finish.md"
     }
   },
-  "dashboards": [{ "name": "App", "port": 8080 }],
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [{ "name": "App", "port": 8080 }]
   },
   "backend": {
     "imageid": "ubuntu"
