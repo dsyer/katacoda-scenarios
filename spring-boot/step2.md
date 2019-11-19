@@ -18,13 +18,13 @@ ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
 EOF
 </code></pre>
 
-Then build the container image, giving it a tag (choose your own ID instead of "dsyer" if you are going to push to Dockerhub):
+Then build the container image, giving it a tag (choose your own ID instead of "springguides" if you are going to push to Dockerhub):
 
-`docker build -t dsyer/demo .`{{execute}}
+`docker build -t springguides/demo .`{{execute}}
 
 You can run the container locally:
 
-`docker run -p 8080:8080 dsyer/demo`{{execute T1}}
+`docker run -p 8080:8080 springguides/demo`{{execute T1}}
 
 and check that it works:
 
@@ -36,7 +36,7 @@ Finish off by killing the container:
 
 You won't be able to push the image unless you authenticate with Dockerhub (`docker login`), but there's an image there already that should work. If you were authenticated you could:
 
-`docker push dsyer/demo`
+`docker push springguides/demo`
 
 In real life the image needs to be pushed to Dockerhub (or some other accessible repository) because Kubernetes pulls the image from inside its Kubelets (nodes), which are not in general connected to the local docker daemon. For the purposes of this scenario you can omit the push and just use the image that is already there.
 
