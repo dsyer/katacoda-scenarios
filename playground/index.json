@@ -18,33 +18,14 @@
     ],
     "intro": {
       "text": "intro.md",
-      "code": "setup.sh"
+      "courseData": "setup.sh"
     },
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "kind.sh",
-          "target": "/root/tools",
-          "chmod": "+x"
-        },
-        {
-          "file": "kubectl.sh",
-          "target": "/root/tools",
-          "chmod": "+x"
-        },
-        {
-          "file": "kustomize.sh",
-          "target": "/root/tools",
-          "chmod": "+x"
-        }
-      ]
     }
   },
   "files": [
-    "app.js"
+    "app.js", "src/main/java/com/example/demo/DemoApplication.java"
   ],
   "environment": {
     "uilayout": "editor-terminal",
