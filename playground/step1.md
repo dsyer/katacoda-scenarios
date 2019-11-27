@@ -10,11 +10,8 @@ server.listen(3000, function() { console.log("Listening on port 3000")});
 
 Open the `pom.xml` in the editor and check that it has the actuator dependency:
 
-<code class="copy">
-
-        <dependency>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-starter-actuator</artifactId>
-		    </dependency>
-
-</code>
+<pre><code class="copy">&lt;dependency>
+  &lt;groupId>org.springframework.boot&lt;/groupId>
+  &lt;artifactId>spring-boot-starter-actuator&lt;/artifactId>
+&lt;/dependency>
+</code></pre>
