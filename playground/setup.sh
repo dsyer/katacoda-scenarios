@@ -1,3 +1,4 @@
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,actuator | tar -xzvf -
 # sed -i -e 's,JAVA_HOME=.*$,JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64",' /etc/environment
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+mkdir demo
+(cd demo; curl -L https://github.com/spring-guides/gs-spring-boot-kubernetes/archive/master.tar.gz | tar xz gs-spring-boot-kubernetes-master/complete --strip-components 2)
+cd demo
