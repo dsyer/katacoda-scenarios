@@ -1,0 +1,41 @@
+Create a `Dockerfile` by running this command:
+
+<pre><code class="execute">
+cat > Dockerfile << EOF
+FROM openjdk:8-jdk-alpine AS builder
+WORKDIR target/dependency
+ARG APPJAR=target/*.jar
+COPY \${APPJAR} app.jar
+RUN jar -xf ./app.jar
+
+FROM openjdk:8-jre-alpine
+VOLUME /tmp
+ARG DEPENDENCY=target/dependency
+COPY --from=builder \${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=builder \${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=builder \${DEPENDENCY}/BOOT-INF/classes /app
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
+EOF
+</code></pre>
+
+Then build the container image, giving it a tag (choose your own ID instead of "springguides" if you are going to push to Dockerhub):
+
+`docker build -t springguides/demo .`{{execute}}
+
+You can run the container locally:
+
+`docker run -p 8080:8080 springguides/demo`{{execute T1}}
+
+and check that it works:
+
+`curl localhost:8080/actuator/health`{{execute T2}}
+
+Finish off by killing the container:
+
+`echo "Send Ctrl+C to kill the container"`{{execute T1 interrupt}}
+
+> NOTE: In this tutorial environment, you will be able to push the image even though you did not authenticate with Dockerhub (`docker login`). If you are running locally you can change the image label and push to Dockerhub, or there's an image there already that should work.
+
+`docker push springguides/demo`{{execute}}
+
+The image needs to be pushed to Dockerhub (or some other accessible registry) because Kubernetes pulls the image from inside its Kubelets (nodes), which are not in general connected to the local docker daemon.
