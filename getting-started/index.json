@@ -14,12 +14,8 @@
         "text": "step2.md"
       },
       {
-        "title": "Install and Run Kubernetes",
-        "text": "step3.md"
-      },
-      {
         "title": "Deploy the Application to Kubernetes",
-        "text": "step4.md"
+        "text": "step3.md"
       }
     ],
     "intro": {
