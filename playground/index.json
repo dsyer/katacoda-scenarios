@@ -22,10 +22,18 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "*",
+          "target": "/root"
+        }
+      ]
     }
   },
   "files": [
-    "app.js", "src/main/java/com/example/demo/DemoApplication.java"
+    "app.js", "demo/src/main/java/com/example/demo/DemoApplication.java"
   ],
   "environment": {
     "uilayout": "editor-terminal",
