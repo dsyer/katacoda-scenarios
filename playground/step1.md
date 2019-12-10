@@ -8,7 +8,7 @@ var server = http.createServer(requestListener);
 server.listen(3000, function() { console.log("Listening on port 3000")});
 </pre>
 
-`app.js`{{open}}
+`demo/pom.xml`{{open}}
 
 Open the `pom.xml` in the editor and check that it has the actuator dependency:
 
