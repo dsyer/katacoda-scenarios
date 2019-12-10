@@ -23,3 +23,11 @@ Let's add some configuration to the deployment for probes, as would be typical f
             port: 8080
 EOF
 </code></pre>
+
+```
+docker run -d -p 5000:5000 --name registry registry:2
+```{{execute}}
+
+```
+export REGISTRY=[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com{{execute}}
+```{{execute}}
