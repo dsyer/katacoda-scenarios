@@ -8,9 +8,14 @@ var server = http.createServer(requestListener);
 server.listen(3000, function() { console.log("Listening on port 3000")});
 </pre>
 
-`demo/pom.xml`{{open}}
+Open the `demo/pom.xml`{{open}} in the editor and check that it has the actuator dependency:
 
-Open the `pom.xml` in the editor and check that it has the actuator dependency:
+```
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```{{copy}}
 
 <pre><code class="copy">&lt;dependency>
   &lt;groupId>org.springframework.boot&lt;/groupId>
