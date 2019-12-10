@@ -8,8 +8,7 @@ kubectl create deployment demo --image localhost/springguides/demo --dry-run -o 
 
 Let's add some configuration to the deployment for probes, as would be typical for an app using Spring Boot actuators:
 
-<pre><code class="execute">
-$ cat >> deployment.yaml <<EOF
+<pre><code class="execute">cat >> deployment.yaml &lt;&ltEOF
         livenessProbe:
           httpGet:
             path: /actuator/info
